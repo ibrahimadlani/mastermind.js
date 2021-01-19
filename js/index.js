@@ -31,3 +31,22 @@ function initBoard(nbRound){
     }
     return board;
   }
+
+// Fonction pour ajouter un pion de couleur dans le code du round //
+// This function is adding one of the six color pieces in the round code //
+function addPiece(board,piece,round){
+    if(board.rows[round].code[0] == 0){
+        board.rows[round].code[0] = piece;
+    }else if(board.rows[round].code[1] == 0){
+        board.rows[round].code[1] = piece;
+    }else if(board.rows[round].code[2] == 0){
+        board.rows[round].code[2] = piece;
+    }else if (board.rows[round].code[3] == 0){
+        board.rows[round].code[3] = piece;
+    }else {
+        console.log("Error : Plus de place dans le code");
+    }
+  }
+
+  
+
