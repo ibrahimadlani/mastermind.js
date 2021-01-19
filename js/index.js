@@ -14,7 +14,9 @@ function codeChecker(codeSuggested, code){
     return output;
   }
 
-  function initBoard(nbRound){
+// Fonction pour initialiser un "board" vierge avec un nouveau code //
+// This function is creating a blank board with a new generated code //
+function initBoard(nbRound){
     var row;
     var board = {
       combinaison:[Math.ceil(Math.random()*7),Math.ceil(Math.random()*7),Math.ceil(Math.random()*7),Math.ceil(Math.random()*7)],
