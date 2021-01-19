@@ -65,17 +65,24 @@ function rmPiece(board,round){
     }
   }
 
-// Fonction pour supprimer un pion dans le code du round dans l'ordre//
-// This function is removing a piece in the round code in order//
-function sendCode(board,code){
-    if(!code.includes(0)){
-        return true;
-    }else {
-        console.log("Error : Le code n'est pas valide");
-        return false;
+
+function game(nbRound) {
+    var board = initBoard(nbRound);
+    while (!(board.round == nbRound)) {
+        while (board.rows[board.round].code.includes(0)) {
+            var a = prompt("code couleur");
+            addPiece(board,a,board.round);
+            console.log("Error : Le code n'est pas valide");
+        }
+        board.rows[board.round].output = codeChecker(board.rows[board.round].code, board.combinaison);
+        console.log("FIN DU ROUND "+ board.round);
+        board.round++;
     }
+    if(board.rows[nbRound-1].code == board.combinaison){
+        console.log("victoire");
+      }else {
+        console.log("defaite");
+      }
+      console.log(board);
   }
 
-
-document.getElementById("myBtn").addEventListener("click", displayDate);
-var board = initBoard(7);
