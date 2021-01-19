@@ -19,6 +19,7 @@ function codeChecker(codeSuggested, code){
 function initBoard(nbRound){
     var row;
     var board = {
+        round:0,
       combinaison:[Math.ceil(Math.random()*7),Math.ceil(Math.random()*7),Math.ceil(Math.random()*7),Math.ceil(Math.random()*7)],
       rows:[]
     }
@@ -64,4 +65,17 @@ function rmPiece(board,round){
     }
   }
 
+// Fonction pour supprimer un pion dans le code du round dans l'ordre//
+// This function is removing a piece in the round code in order//
+function sendCode(board,code){
+    if(!code.includes(0)){
+        return true;
+    }else {
+        console.log("Error : Le code n'est pas valide");
+        return false;
+    }
+  }
+
+
+document.getElementById("myBtn").addEventListener("click", displayDate);
 var board = initBoard(7);
