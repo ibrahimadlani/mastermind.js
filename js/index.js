@@ -13,3 +13,19 @@ function codeChecker(codeSuggested, code){
     }
     return output;
   }
+
+  function initBoard(nbRound){
+    var row;
+    var board = {
+      combinaison:[Math.ceil(Math.random()*7),Math.ceil(Math.random()*7),Math.ceil(Math.random()*7),Math.ceil(Math.random()*7)],
+      rows:[]
+    }
+    for (let i = 0; i < nbRound; i++) {
+      row = {
+        code:[0,0,0,0],
+        output:[0,0,0,0]
+      }
+      board.rows.push(row);
+    }
+    return board;
+  }
