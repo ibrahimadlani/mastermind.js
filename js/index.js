@@ -48,5 +48,20 @@ function addPiece(board,piece,round){
     }
   }
 
-  
+// Fonction pour supprimer un pion dans le code du round dans l'ordre//
+// This function is removing a piece in the round code in order//
+function rmPiece(board,round){
+    if(board.rows[round].code[3] != 0){
+        board.rows[round].code[3] = 0;
+    }else if(board.rows[round].code[2] != 0){
+        board.rows[round].code[2] = 0;
+    }else if(board.rows[round].code[1] != 0){
+        board.rows[round].code[1] = 0;
+    }else if (board.rows[round].code[0] != 0){
+        board.rows[round].code[0] = 0;
+    }else {
+        console.log("Error : Tout est déjà effacé");
+    }
+  }
 
+var board = initBoard(7);
